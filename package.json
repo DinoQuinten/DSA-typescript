@@ -1,0 +1,11 @@
+{
+  "name": "learning-dsa",
+  "version": "1.0.0",
+  "description": "Comprehensive DSA reading material with runnable TypeScript examples",
+  "scripts": {
+    "example": "bun run"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
