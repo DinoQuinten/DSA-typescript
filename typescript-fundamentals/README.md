@@ -225,26 +225,109 @@ console.log(7 % 3);   // 1  (7 = 2*3 + 1)
 console.log(10 % 2);  // 0  (even number check!)
 ```
 
-### 🔧 Bitwise Operators (Brief)
+### 🔧 Bitwise Operators — Simple Explanation
 
-Used in some advanced LeetCode problems:
+Some LeetCode problems use **bitwise** operators. They work on numbers in **binary** (0s and 1s). You only need two ideas: what binary is, and how we compare bits one column at a time.
 
-| Operator | Name | Example | Result | Use Case |
-|----------|------|---------|--------|----------|
-| `&` | AND | `5 & 3` | `1` | Check if bit is set |
-| `\|` | OR | `5 \| 3` | `7` | Set a bit |
-| `^` | XOR | `5 ^ 3` | `6` | Toggle / find unique |
-| `<<` | Left shift | `1 << 3` | `8` | Multiply by 2^n |
-| `>>` | Right shift | `8 >> 2` | `2` | Divide by 2^n |
+**What are bits?**  
+Computers store integers as a row of 0s and 1s. Like decimal has place values 100, 10, 1, binary has place values 4, 2, 1 (powers of 2). So:
+
+| Place value | 4 | 2 | 1 |
+|-------------|---|---|---|
+| 5 in binary | 1 | 0 | 1 → 4+0+1 = **5** |
+| 3 in binary | 0 | 1 | 1 → 0+2+1 = **3** |
+
+Bitwise operators look at **each column** and combine the two bits with a simple rule.
+
+---
+
+**AND (`&`)** — “Both must be 1 to get 1.”
+
+| 5 | 1 | 0 | 1 |
+|---|---|---|---|
+| 3 | 0 | 1 | 1 |
+| **5 & 3** | 1&0=**0** | 0&1=**0** | 1&1=**1** → result **1** |
+
+**OR (`|`)** — “If either is 1, result is 1.”
+
+| 5 | 1 | 0 | 1 |
+|---|---|---|---|
+| 3 | 0 | 1 | 1 |
+| **5 \| 3** | 1\|0=**1** | 0\|1=**1** | 1\|1=**1** → result **7** |
+
+**XOR (`^`)** — “Result is 1 only when the two bits are *different*.”
+
+| 5 | 1 | 0 | 1 |
+|---|---|---|---|
+| 3 | 0 | 1 | 1 |
+| **5 ^ 3** | 1^0=**1** | 0^1=**1** | 1^1=**0** → result **6** |
+
+Two rules that make XOR useful:
+
+- **Number XOR itself = 0** — same bits in every column, so every column gives 0.
+- **Number XOR 0 = same number** — 0 has all bits 0, so every column keeps the original bit.
+
+```mermaid
+graph LR
+    A["x"] -->|"XOR with itself"| B["0"]
+    C["x"] -->|"XOR with 0"| D["x"]
+```
+
+---
+
+**Shifts** — “Slide the bits left or right.”
+
+- **Left shift (`<<`)** — slide left, fill with 0. Like multiplying by 2 for each step.  
+  `1 << 3` = slide 1 left by 3 places = 1000 in binary = **8** (same as 1×2×2×2).
+- **Right shift (`>>`)** — slide right, drop bits. Like integer divide by 2 for each step.  
+  `8 >> 2` = slide 8 right by 2 places = **2** (same as 8÷2÷2).
+
+```mermaid
+graph LR
+    subgraph leftShift ["Left shift: multiply by 2 per step"]
+        L1["1"] -->|"<< 3"| L2["8"]
+    end
+    subgraph rightShift ["Right shift: divide by 2 per step"]
+        R1["8"] -->|">> 2"| R2["2"]
+    end
+```
+
+---
+
+**Classic trick: find the number that appears once**
+
+If every number appears **twice** except one that appears **once**, XOR finds the single one. Duplicates cancel (x ^ x = 0), and 0 ^ x = x, so in the end only the single number remains.
+
+Step through `[2, 1, 4, 1, 2]`:
+
+| Step | Operation | Running XOR |
+|------|-----------|-------------|
+| Start | — | 0 |
+| +2 | 0 ^ 2 | 2 |
+| +1 | 2 ^ 1 | 3 |
+| +4 | 3 ^ 4 | 7 |
+| +1 | 7 ^ 1 | 6 (1 cancels with the first 1) |
+| +2 | 6 ^ 2 | **4** (2 cancels with the first 2) |
+
+So the answer is **4** — the only number that appeared once.
 
 ```typescript
-// 🎯 Classic LeetCode trick: find the single number using XOR
-// XOR of a number with itself = 0, XOR with 0 = itself
+// Find the single number (all others appear exactly twice)
 const nums = [2, 1, 4, 1, 2];
 let single = 0;
 for (const n of nums) single ^= n;
-console.log(single);  // 4 — the only number that appears once!
+console.log(single);  // 4
 ```
+
+**Quick reference:**
+
+| Operator | Name | Example | Result | Use case |
+|----------|------|---------|--------|----------|
+| `&` | AND | `5 & 3` | 1 | Check if a bit is set |
+| `\|` | OR | `5 \| 3` | 7 | Set a bit |
+| `^` | XOR | `5 ^ 3` | 6 | Toggle bit, or find unique (cancels pairs) |
+| `<<` | Left shift | `1 << 3` | 8 | Multiply by 2^n |
+| `>>` | Right shift | `8 >> 2` | 2 | Integer divide by 2^n |
 
 ---
 
