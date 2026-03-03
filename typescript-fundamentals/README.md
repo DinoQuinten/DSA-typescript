@@ -227,17 +227,46 @@ console.log(10 % 2);  // 0  (even number check!)
 
 ### 🔧 Bitwise Operators — Simple Explanation
 
-Some LeetCode problems use **bitwise** operators. They work on numbers in **binary** (0s and 1s). You only need two ideas: what binary is, and how we compare bits one column at a time.
+Some LeetCode problems use **bitwise** operators. They work on numbers in **binary** (0s and 1s).
 
-**What are bits?**  
-Computers store integers as a row of 0s and 1s. Like decimal has place values 100, 10, 1, binary has place values 4, 2, 1 (powers of 2). So:
+#### Step 1: Understand Binary (Base 2)
 
-| Place value | 4 | 2 | 1 | Result |
-|-------------|---|---|---|--------|
-| 5 in binary | 1 | 0 | 1 | 4+0+1 = **5** |
-| 3 in binary | 0 | 1 | 1 | 0+2+1 = **3** |
+You already know decimal (base 10) — each position is a power of 10:
 
-Bitwise operators look at **each column** and combine the two bits with a simple rule.
+```
+Decimal 253:
+  Position:      Hundreds    Tens    Ones
+  Power of 10:     10²       10¹     10⁰
+  Digit:            2         5       3
+  Meaning:       2×100  +  5×10  +  3×1  =  253
+```
+
+Binary works the same way, but each position is a power of **2**:
+
+```
+Binary 101:
+  Position:      Fours    Twos    Ones
+  Power of 2:     2²       2¹      2⁰
+  Digit:           1        0       1
+  Meaning:       1×4   +  0×2  +  1×1  =  5  (in decimal)
+```
+
+Here are some numbers in both forms:
+
+| Decimal | Binary | How to read it (place values: 4, 2, 1) |
+|---------|--------|----------------------------------------|
+| 0       | `000`  | 0 + 0 + 0 = 0                         |
+| 1       | `001`  | 0 + 0 + 1 = 1                         |
+| 2       | `010`  | 0 + 2 + 0 = 2                         |
+| 3       | `011`  | 0 + 2 + 1 = 3                         |
+| 4       | `100`  | 4 + 0 + 0 = 4                         |
+| 5       | `101`  | 4 + 0 + 1 = 5                         |
+| 6       | `110`  | 4 + 2 + 0 = 6                         |
+| 7       | `111`  | 4 + 2 + 1 = 7                         |
+
+#### Step 2: Bitwise Operators (Compare Bits Column by Column)
+
+Bitwise operators line up two numbers in binary and apply a rule to **each column independently**.
 
 ---
 
