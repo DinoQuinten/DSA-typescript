@@ -101,7 +101,7 @@ graph TD
     subgraph "❌ NOT a Heap (Property Violated)"
         A3["1"] --> B3["5"]
         A3 --> C3["2"]
-        B3 --> D3["3:::violation"]
+        B3 --> D3["3"]
         B3 --> E3["6"]
     end
 

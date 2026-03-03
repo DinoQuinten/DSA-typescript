@@ -1030,7 +1030,7 @@ This single parameter controls whether elements can repeat and in what way.
 |---|---------|--------------|-------|
 | 51 | [N-Queens](https://leetcode.com/problems/n-queens/) | Constraint backtracking | Column + diagonal sets |
 | 37 | [Sudoku Solver](https://leetcode.com/problems/sudoku-solver/) | Constraint backtracking | Row/col/box sets |
-| 212 | [Word Search II](https://leetcode.com/problems/word-search-ii/) | Backtracking + Trie | See [Chapter 08](../08-hash-maps-and-sets/README.md) for Trie |
+| 212 | [Word Search II](https://leetcode.com/problems/word-search-ii/) | Backtracking + Trie | See [Chapter 08 — Tries](../08-tries/README.md) for Trie |
 
 ### 🗺️ Suggested Order
 
@@ -1046,5 +1046,5 @@ Start with Subsets (simplest template application), then build up to harder cons
 
 ---
 
-> **Next up**: [Chapter 14 — Sorting & Searching](../14-sorting-and-searching/README.md) 📊
+> **Next up**: [Chapter 14 — BFS & DFS](../14-bfs-and-dfs/README.md) 📊
 > **Coming later**: [Chapter 15 — Dynamic Programming](../15-dynamic-programming/README.md) — where recursive solutions get *fast* 🚀

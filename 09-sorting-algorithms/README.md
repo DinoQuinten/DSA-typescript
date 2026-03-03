@@ -991,4 +991,4 @@ mindmap
 
 ---
 
-> **Next Chapter**: [10 - Greedy Algorithms →](../10-greedy-algorithms/README.md)
+> **Next Chapter**: [10 - Binary Search →](../10-binary-search/README.md)

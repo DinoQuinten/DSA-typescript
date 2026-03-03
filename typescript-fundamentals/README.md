@@ -45,7 +45,7 @@ graph LR
 |---------|---------|
 | 🐛 **Catches bugs early** | `node.valu` → ❌ error before running |
 | 🧠 **Autocomplete** | Type `node.` and see all available methods |
-| 📖 **Self-documenting** | `function bfs(root: TreeNode | null): number[]` — you instantly know what it takes and returns |
+| 📖 **Self-documenting** | `function bfs(root: TreeNode \| null): number[]` — you instantly know what it takes and returns |
 | 🔒 **Safer refactoring** | Rename a property → TypeScript finds every usage |
 
 ### ▶️ How to Run TypeScript

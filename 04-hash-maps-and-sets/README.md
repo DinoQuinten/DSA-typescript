@@ -959,4 +959,4 @@ graph TD
 
 ---
 
-> **Next Chapter:** [Stacks & Queues →](../05-stacks-and-queues/README.md)
+> **Next Chapter:** [Trees →](../05-trees/README.md)

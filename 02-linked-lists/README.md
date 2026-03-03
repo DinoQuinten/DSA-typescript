@@ -1388,6 +1388,6 @@ graph LR
 
 ---
 
-> 🚀 **Next Chapter:** [Stacks & Queues →](../03-stacks-queues/README.md)
+> 🚀 **Next Chapter:** [Stacks & Queues →](../03-stacks-and-queues/README.md)
 >
-> ⬅️ **Previous Chapter:** [Arrays & Strings](../01-arrays-strings/README.md)
+> ⬅️ **Previous Chapter:** [Arrays & Strings](../01-arrays-and-strings/README.md)

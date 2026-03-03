@@ -319,10 +319,10 @@ graph TD
 
 **How it works**:
 
-| Index | 0 | 1 | 2 | 3 | 4 |
-|-------|---|---|---|---|---|
-| Array | 2 | 4 | 1 | 3 | 5 |
-| Prefix| 0 | 2 | 6 | 7 | 10| 15 |
+| Index | 0 | 1 | 2 | 3 | 4 | 5 |
+|-------|---|---|---|---|---|---|
+| Array | 2 | 4 | 1 | 3 | 5 | — |
+| Prefix| 0 | 2 | 6 | 7 | 10 | 15 |
 
 `sum(i, j) = prefix[j + 1] - prefix[i]`
 
@@ -604,7 +604,7 @@ function buildCSV(data: string[][]): string {
 | Operation | Time | Space | Notes |
 |-----------|------|-------|-------|
 | Access `arr[i]` | **O(1)** | O(1) | Base + offset calculation |
-| `push()` | **O(1)**** | O(1) | Amortized; O(n) when resizing |
+| `push()` | **O(1)** | O(1) | Amortized; O(n) when resizing |
 | `pop()` | **O(1)** | O(1) | Removes from end |
 | `unshift()` | ⚠️ O(n) | O(1) | Shifts all elements right |
 | `shift()` | ⚠️ O(n) | O(1) | Shifts all elements left |

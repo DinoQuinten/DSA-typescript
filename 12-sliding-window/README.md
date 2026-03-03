@@ -427,7 +427,7 @@ function minWindow(s: string, t: string): string {
 ### 5.4 Sliding Window Maximum (Monotonic Deque) 📏🔗
 
 > **Type:** Fixed window + monotonic deque | **LC #239** | **Hard**
-> **Cross-reference:** See [Chapter 03 — Monotonic Stack & Queue](../03-monotonic-stack-queue/README.md) for the deque deep-dive.
+> **Cross-reference:** See [Chapter 03 — Stacks & Queues](../03-stacks-and-queues/README.md) for the deque deep-dive.
 
 ```typescript
 function maxSlidingWindow(nums: number[], k: number): number[] {
@@ -790,6 +790,6 @@ if (freq.get(char) === 0) freq.delete(char);
 
 ---
 
-> **Next up:** [Chapter 13 →](../13-two-pointers/README.md)
+> **Next up:** [Chapter 13 →](../13-recursion-and-backtracking/README.md)
 >
-> **Previously:** [Chapter 11 ←](../11-prefix-sum/README.md)
+> **Previously:** [Chapter 11 ←](../11-two-pointers/README.md)

@@ -227,7 +227,7 @@ gantt
     section Greedy Picks ✅
     Pick A (1-3) :crit, pa, 1, 3
     Pick C (4-7) :crit, pc, 4, 7
-    Pick D (6-8) :done, pd, 8, 8
+    Pick D (6-8) :done, pd, 6, 8
 ```
 
 Step-by-step:
@@ -402,7 +402,7 @@ graph TD
 ### Problem 3: Merge Intervals (LC 56) 🔗
 
 > Merge all overlapping intervals.
-> 📌 *Cross-ref: [Chapter 09 — Sorting](../09-sorting/README.md) for sort-first patterns*
+> 📌 *Cross-ref: [Chapter 09 — Sorting](../09-sorting-algorithms/README.md) for sort-first patterns*
 
 ```typescript
 function merge(intervals: number[][]): number[][] {
@@ -910,5 +910,5 @@ graph LR
 
 ---
 
-> **Next Chapter**: [Chapter 17 →](../17-backtracking/README.md)
+> **Next Chapter**: *(End of track — more chapters may be added later)*
 > **Previous Chapter**: [← Chapter 15](../15-dynamic-programming/README.md)
