@@ -90,11 +90,11 @@ count = count + 1;
 graph TD
     A{"Will the value<br/>change?"} -->|"No"| B["✅ Use const"]
     A -->|"Yes"| C["✅ Use let"]
-    A -->|"Never"| D["❌ Avoid var"]
     style B fill:#22c55e,stroke:#333,color:#fff
     style C fill:#3b82f6,stroke:#333,color:#fff
-    style D fill:#ef4444,stroke:#333,color:#fff
 ```
+
+> **Rule of thumb:** Never use `var` — it has confusing scoping rules. Stick to `const` and `let`.
 
 ### 🎨 Primitive Types
 
@@ -143,10 +143,12 @@ if (typeof safe === "string") {
   safe.toUpperCase();           // ✅ Now TypeScript knows it's a string
 }
 
-// 🚫 never — represents something that should NEVER happen
+// never — a RETURN TYPE for functions that never return to the caller
+// (They always throw, or run an infinite loop, so they never "finish normally".)
 function throwError(msg: string): never {
-  throw new Error(msg);  // Function never returns normally
+  throw new Error(msg);
 }
+// Why use : never? It tells TypeScript "this path doesn't return", which helps with type narrowing in callers.
 ```
 
 ```mermaid
@@ -159,6 +161,8 @@ graph LR
     style C fill:#22c55e,stroke:#333,color:#fff
     style D fill:#6b7280,stroke:#333,color:#fff
 ```
+
+> **Left:** Prefer `unknown` over `any`, then narrow to a specific type. **Right:** `never` is a *return type* for functions that never return (e.g. they always throw).
 
 ### 📜 Template Literals
 
@@ -437,10 +441,11 @@ Strings are **immutable** in TypeScript — you cannot change a character in pla
 ```mermaid
 graph LR
     A["'hello'"] -->|".toUpperCase()"| B["'HELLO'"]
-    A -->|"Original unchanged"| A
     style A fill:#3b82f6,stroke:#333,color:#fff
     style B fill:#22c55e,stroke:#333,color:#fff
 ```
+
+> **Immutability:** The original string `A` is unchanged; `.toUpperCase()` returns a **new** string `B`.
 
 ### 🔧 Essential String Methods
 
@@ -645,10 +650,12 @@ graph TD
     A["Function Types"] --> B["Declaration<br/>function add() {}"]
     A --> C["Expression<br/>const add = function() {}"]
     A --> D["Arrow<br/>const add = () => {}"]
-    D -->|"Most used in<br/>modern TypeScript"| E["✅ Preferred"]
+    D -->|"Most used in<br/>modern TypeScript"| E["✅ Preferred for new code"]
     style D fill:#22c55e,stroke:#333,color:#fff
     style E fill:#22c55e,stroke:#333,color:#fff
 ```
+
+> All three are valid. Prefer **arrow functions** for new code; use the others when you need hoisting or `this` binding.
 
 ### ⚙️ Parameter Variations
 
