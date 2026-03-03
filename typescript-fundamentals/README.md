@@ -232,10 +232,10 @@ Some LeetCode problems use **bitwise** operators. They work on numbers in **bina
 **What are bits?**  
 Computers store integers as a row of 0s and 1s. Like decimal has place values 100, 10, 1, binary has place values 4, 2, 1 (powers of 2). So:
 
-| Place value | 4 | 2 | 1 |
-|-------------|---|---|---|
-| 5 in binary | 1 | 0 | 1 → 4+0+1 = **5** |
-| 3 in binary | 0 | 1 | 1 → 0+2+1 = **3** |
+| Place value | 4 | 2 | 1 | Result |
+|-------------|---|---|---|--------|
+| 5 in binary | 1 | 0 | 1 | 4+0+1 = **5** |
+| 3 in binary | 0 | 1 | 1 | 0+2+1 = **3** |
 
 Bitwise operators look at **each column** and combine the two bits with a simple rule.
 
